@@ -2,11 +2,13 @@ language: node_js
 node_js:
   - "6"
 cache: yarn
+before_script:
+  - mkdir dist && cp index.html dist
 script: yarn build
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: build
+  local_dir: dist
   on:
     branch: master
