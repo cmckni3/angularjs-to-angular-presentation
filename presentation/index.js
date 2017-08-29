@@ -197,7 +197,7 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide transition={["zoom", "slide"]} transitionDuration={500}>
-          <Heading size={1} lineHeight={1} caps>
+          <Heading size={1} lineHeight={1} fit caps>
             Total Conversion Upgrade Path
           </Heading>
           <Text>
@@ -205,7 +205,7 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={["zoom", "slide"]} transitionDuration={500}>
-          <Heading size={1} lineHeight={1} caps>
+          <Heading size={1} lineHeight={1} fit caps>
             Total Conversion Upgrade Path (continued)
           </Heading>
           <Layout>
@@ -213,7 +213,18 @@ export default class Presentation extends React.Component {
               <Heading size={3} lineHeight={1}>
                 Advantages
               </Heading>
+              <List>
+                <ListItem>Minimal setup required (a la Angular CLI)</ListItem>
+                <ListItem>Fresh application architecture</ListItem>
+              </List>
             </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["zoom", "slide"]} transitionDuration={500}>
+          <Heading size={1} lineHeight={1} fit caps>
+            Total Conversion Upgrade Path (continued)
+          </Heading>
+          <Layout>
             <Fill>
               <Heading size={3} lineHeight={1}>
                 Disadvantages
@@ -221,73 +232,170 @@ export default class Presentation extends React.Component {
               <List>
                 <ListItem>Lengthy process</ListItem>
                 <ListItem>Prone to errors</ListItem>
-                <ListItem></ListItem>
               </List>
             </Fill>
           </Layout>
         </Slide>
-        <Slide transition={[ "spin", "slide" ]} bgColor="primary">
-          <Heading size={ 2 } caps fit textColor="tertiary">Terminal</Heading>
+        <Slide transition={[ "spin", "slide" ]}>
+          <Heading size={1} caps fit>Angular CLI</Heading>
           <Terminal title="1. cmcknight@Christophers-MacBook-Pro: ~(zsh)" output={[
             "-> % ng --version",
-            <div style={{ color: "red" }}>
-    _                      _                 ____ _     ___
-   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-  / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
- / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
-/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-               |___/
-            <div>@angular/cli: 1.3.0</div>
-            <div>node: 6.11.2</div>
-            <div>os: darwin x64</div>
+            <div>
+              <div>@angular/cli: 1.3.0</div>
+              <div>node: 6.11.2</div>
+              <div>os: darwin x64</div>
+            </div>]}
+          />
+        </Slide>
+        <Slide transition={[ "spin", "slide" ]}>
+          <Heading size={1} caps fit>Angular CLI</Heading>
+          <Terminal title="1. cmcknight@Christophers-MacBook-Pro: ~(zsh)" output={[
+            "-> % ng new my-application",
+            <div>
+            <pre>
+            installing ng<br />
+              <span style={{ color: "green" }}>create</span> src/app/app.component.css<br />
+              <span style={{ color: "green" }}>create</span> src/app/app.component.html<br />
+              <span style={{ color: "green" }}>create</span> src/app/app.component.spec.ts<br />
+              <span style={{ color: "green" }}>create</span> src/app/app.component.ts<br />
+              <span style={{ color: "green" }}>create</span> src/app/app.module.ts<br />
+              <span style={{ color: "green" }}>create</span> src/index.html<br />
+              <span style={{ color: "green" }}>create</span> src/main.ts<br />
+              <span style={{ color: "green" }}>create</span> src/polyfills.ts<br />
+              <span style={{ color: "green" }}>create</span> src/tsconfig.app.json<br />
+              <span style={{ color: "green" }}>create</span> src/tsconfig.spec.json<br />
+              <span style={{ color: "green" }}>create</span> src/typings.d.ts<br />
+              <span style={{ color: "green" }}>create</span> .angular-cli.json<br />
+              <span style={{ color: "green" }}>create</span> package.json<br />
+              <span style={{ color: "green" }}>create</span> tsconfig.json<br />
+              <span style={{ color: "green" }}>create</span> tslint.json<br />
+            <span style={{ color: "green" }}>Installing packages for tooling via yarn.</span><br />
+            <span style={{ color: "green" }}>Installed packages for tooling via yarn.</span><br />
+            <span style={{ color: "green" }}>Successfully initialized git.</span><br />
+            <span style={{ color: "green" }}>Project 'my-application' successfully created.</span><br />
+            </pre>
             </div>]}
           />
         </Slide>
         <Slide transition={["zoom", "slide"]} transitionDuration={500}>
-          <Heading size={1} lineHeight={1} caps>
+          <Heading size={1} lineHeight={1} fit caps>
             ng-metadata Upgrade Path
           </Heading>
+          <Text>
+            <S type="italic">ng-metadata</S> uses AngularJS dependencies to use Angular
+            style annotations/decorators.
+          </Text>
         </Slide>
         <Slide transition={["zoom", "slide"]} transitionDuration={500}>
-          <Heading size={1} lineHeight={1} caps>
+          <Heading size={1} lineHeight={1} fit caps>
+            ng-metadata Upgrade Path
+          </Heading>
+          <Layout>
+            <Fill>
+              <Heading size={3} lineHeight={1}>
+                Advantages
+              </Heading>
+              <List>
+                <ListItem>Migration over time</ListItem>
+                <ListItem>
+                  Smaller application size over <S type="italic">ng-upgrade</S> (third upgrade method)
+                </ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["zoom", "slide"]} transitionDuration={500}>
+          <Heading size={1} lineHeight={1} fit caps>
+            ng-metadata Upgrade Path
+          </Heading>
+          <Layout>
+            <Fill>
+              <Heading size={3} lineHeight={1}>
+                Disadvantages
+              </Heading>
+              <List>
+                <ListItem>Requires large refactor of AngularJS code</ListItem>
+                <ListItem>Possibly interopability issues</ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+        <CodeSlide
+            transition={[]}
+            lang="js"
+            code={require("raw-loader!../assets/ng-metadata.ts")}
+            ranges={[
+              { loc: [0, 270], title: "ng-metadata code sample" },
+              { loc: [0, 7], note: "AngularJS code" },
+              { loc: [0, 23], note: "AngularJS directive/component" },
+              { loc: [0, 49], note: "Bootstrap AngularJS in TypeScript!" },
+              { loc: [0, 57], note: "AppModule" },
+              { loc: [0, 64], note: "Import ng-metadata" },
+              { loc: [0, 68], note: "Use AngularJS directive in Angular!" },
+              { loc: [0, 94], note: "The Magic metadata!" }
+            ]} />
+        <Slide transition={["zoom", "slide"]} transitionDuration={500}>
+          <Heading size={1} lineHeight={1} fit caps>
             ng-upgrade Upgrade Path
           </Heading>
+          <Text>
+            <S type="italic">ng-upgrade</S> allows AngularJS code to run inside of
+          </Text>
+        </Slide>
+        <Slide transition={["zoom", "slide"]} transitionDuration={500}>
+          <Heading size={1} lineHeight={1} fit caps>
+            ng-metadata Upgrade Path
+          </Heading>
+          <Layout>
+            <Fill>
+              <Heading size={3} lineHeight={1}>
+                Advantages
+              </Heading>
+              <List>
+                <ListItem>Convert between Angular and AngularJS</ListItem>
+                <ListItem>Better interopability</ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["zoom", "slide"]} transitionDuration={500}>
+          <Heading size={1} lineHeight={1} fit caps>
+            ng-metadata Upgrade Path
+          </Heading>
+          <Layout>
+            <Fill>
+              <Heading size={3} lineHeight={1}>
+                Disadvantages
+              </Heading>
+              <List>
+                <ListItem>Large build sizes</ListItem>
+                <ListItem>Configuration</ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["zoom", "slide"]} transitionDuration={500}>
           <Layout>
             <Fill>
               <Image src={images.yoDawg} />
             </Fill>
           </Layout>
         </Slide>
-        <Slide transition={["zoom", "slide"]} transitionDuration={500}>
-          <Heading size={1} lineHeight={1} caps>
-            Demo
-          </Heading>
-        </Slide>
         <CodeSlide
             transition={[]}
             lang="js"
-            code={require("raw-loader!../assets/deck.example")}
+            code={require("raw-loader!../assets/ng-upgrade.ts")}
             ranges={[
-              { loc: [0, 270], title: "Walking through some code" },
-              { loc: [0, 1], title: "The Beginning" },
-              { loc: [1, 2] },
-              { loc: [1, 2], note: "Heres a note!" },
-              { loc: [2, 3] }
+              { loc: [0, 270], title: "ng-upgrade code sample" },
+              { loc: [0, 9], note: "Create the upgradeAdapter" },
+              { loc: [0, 29], note: "Bootstrap AngularJS App module" },
+              { loc: [0, 44], note: "Downgrade Angular component" },
+              { loc: [0, 48], note: "Upgrade AngularJS component" }
             ]} />
-        <Slide transition={[ "spin", "slide" ]} bgColor="primary">
-          <Heading size={ 2 } caps fit textColor="tertiary">Terminal</Heading>
-          <Terminal title="1. cmcknight@Christophers-MacBook-Pro: ~(zsh)" output={[
-            "-> % npm test",
-            <div style={{ color: "#33B969"}}>TOTAL: 174 SUCCESS</div>,
-            <div>
-              <div>=============================== Coverage summary ===============================</div>
-              <div style={{ color: "#DEC612"}}>Statements   : 51.29% ( 278/542 )</div>
-              <div style={{ color: "#EE5057"}}>Branches     : 38.78% ( 95/245 )</div>
-              <div style={{ color: "#EE5057"}}>Functions    : 46.21% ( 61/132 )</div>
-              <div style={{ color: "#DEC612"}}>Lines        : 52.69% ( 274/520 )</div>
-              <div>================================================================================</div>
-            </div>]}
-          />
+        <Slide transition={["zoom", "slide"]} transitionDuration={500}>
+          <Heading size={1} lineHeight={1} caps>
+            Questions?
+          </Heading>
         </Slide>
       </Deck>
     );
