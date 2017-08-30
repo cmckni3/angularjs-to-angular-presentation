@@ -325,7 +325,7 @@ export default class Presentation extends React.Component {
             lang="js"
             code={require("raw-loader!../assets/ng-metadata.ts")}
             ranges={[
-              { loc: [0, 112], title: "ng-metadata code sample" },
+              { loc: [0, 119], title: "ng-metadata code sample" },
               { loc: [5, 7], note: "AngularJS Module" },
               { loc: [18, 21], note: "AngularJS directive/component" },
               { loc: [22, 38] },
