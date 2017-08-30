@@ -84,17 +84,23 @@ export class HeroService {
 }
 
 // hero.component.ts
-import { Component, Inject, Input, Output, EventEmitter, OnInit } from 'ng-metadata/core';
+import {
+  Component,
+  Inject,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit
+} from 'ng-metadata/core';
 import { HeroService } from './hero.service';
 
 @Component({
   selector: 'hero',
   moduleId: module.id,
   templateUrl: './hero.component.html',
-  legacy:{ transclude: true }
+  legacy: { transclude: true }
 })
 export class HeroComponent implements OnInit {
-
   // one way binding determined by parent template
   @Input() name: string;
   @Output() call = new EventEmitter<void>();
@@ -108,5 +114,4 @@ export class HeroComponent implements OnInit {
   ){}
 
   ngOnInit(){ /* your init logic */ }
-
 }

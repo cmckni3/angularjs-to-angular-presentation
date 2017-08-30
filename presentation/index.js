@@ -325,26 +325,31 @@ export default class Presentation extends React.Component {
             lang="js"
             code={require("raw-loader!../assets/ng-metadata.ts")}
             ranges={[
-              { loc: [0, 270], title: "ng-metadata code sample" },
-              { loc: [0, 7], note: "AngularJS code" },
-              { loc: [0, 23], note: "AngularJS directive/component" },
-              { loc: [0, 49], note: "Bootstrap AngularJS in TypeScript!" },
-              { loc: [0, 57], note: "AppModule" },
-              { loc: [0, 64], note: "Import ng-metadata" },
-              { loc: [0, 68], note: "Use AngularJS directive in Angular!" },
-              { loc: [0, 94], note: "The Magic metadata!" }
+              { loc: [0, 112], title: "ng-metadata code sample" },
+              { loc: [5, 7], note: "AngularJS Module" },
+              { loc: [18, 21], note: "AngularJS directive/component" },
+              { loc: [22, 38] },
+              { loc: [44, 49], note: "Bootstrap AngularJS in TypeScript! (TS Optional)" },
+              { loc: [50, 61] },
+              { loc: [63, 64], note: "Import ng-metadata" },
+              { loc: [63, 73], note: "Use AngularJS directive in Angular!" },
+              { loc: [94, 95], note: "The Magic metadata!" },
+              { loc: [96, 97] },
+              { loc: [98, 101] },
+              { loc: [101, 109] }
             ]} />
         <Slide transition={["zoom", "slide"]} transitionDuration={500}>
           <Heading size={1} lineHeight={1} fit caps>
             ng-upgrade Upgrade Path
           </Heading>
           <Text>
-            <S type="italic">ng-upgrade</S> allows AngularJS code to run inside of
+            <S type="italic">ng-upgrade</S> allows AngularJS code to run inside of Angular.
+            AngularJS and Angular run together in the same application.
           </Text>
         </Slide>
         <Slide transition={["zoom", "slide"]} transitionDuration={500}>
           <Heading size={1} lineHeight={1} fit caps>
-            ng-metadata Upgrade Path
+            ng-upgrade Upgrade Path
           </Heading>
           <Layout>
             <Fill>
@@ -360,7 +365,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["zoom", "slide"]} transitionDuration={500}>
           <Heading size={1} lineHeight={1} fit caps>
-            ng-metadata Upgrade Path
+            ng-upgrade Upgrade Path
           </Heading>
           <Layout>
             <Fill>
@@ -386,11 +391,18 @@ export default class Presentation extends React.Component {
             lang="js"
             code={require("raw-loader!../assets/ng-upgrade.ts")}
             ranges={[
-              { loc: [0, 270], title: "ng-upgrade code sample" },
-              { loc: [0, 9], note: "Create the upgradeAdapter" },
-              { loc: [0, 29], note: "Bootstrap AngularJS App module" },
-              { loc: [0, 44], note: "Downgrade Angular component" },
-              { loc: [0, 48], note: "Upgrade AngularJS component" }
+              { loc: [0, 55], title: "ng-upgrade code sample" },
+              { loc: [2, 6], note: "Import Angular and Angular upgrade adapter" },
+              { loc: [8, 9], note: "Create the upgradeAdapter" },
+              { loc: [10, 18] },
+              { loc: [19, 20], note: "Import upgrade adapter we instantiated" },
+              { loc: [21, 30], note: "Create AngularJS/Angular hybrid application" },
+              { loc: [30, 45], title: "Downgrade Angular component" },
+              { loc: [30, 39], note: "Imports" },
+              { loc: [39, 44], note: "Downgrade Angular component" },
+              { loc: [45, 55], title: "Upgrade AngularJS component" },
+              { loc: [45, 51], note: "Tell Angular Upgrade Adapter about AngularJS component" },
+              { loc: [51, 55], note: "Declare AngularJS class to be upgraded" }
             ]} />
         <Slide transition={["zoom", "slide"]} transitionDuration={500}>
           <Heading size={1} lineHeight={1} caps>

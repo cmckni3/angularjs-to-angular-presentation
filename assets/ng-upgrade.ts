@@ -43,7 +43,7 @@ angular
   .directive('a2Downgrade',
     upgradeAdapter.downgradeNg2Component(A2DowngradeComponent));
 
-// upgradable-compone.js
+// upgradable-component.js
 angular.module('app').component('a1Upgradable', {
   controller: Upgradable,
   template: `<span>{{ a1Upgradable.message }}</span>`
