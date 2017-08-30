@@ -2,6 +2,13 @@
 
 var path = require("path");
 var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var BASE_HREF = '/';
+
+if (process.env.BASE_HREF) {
+  BASE_HREF = process.env.BASE_HREF;
+}
 
 module.exports = {
   devtool: "source-map",
@@ -12,12 +19,15 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist/"
+    filename: "bundle.js"
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      baseUrl: BASE_HREF
+    })
   ],
   module: {
     loaders: [{
@@ -62,7 +72,7 @@ module.exports = {
       loader: "url-loader?mimetype=image/gif",
       include: path.join(__dirname, "assets")
     }, {
-      test: /\.jpg$/,
+      test: /(\.jpg|\.jpeg)$/,
       loader: "url-loader?mimetype=image/jpg",
       include: path.join(__dirname, "assets")
     }]

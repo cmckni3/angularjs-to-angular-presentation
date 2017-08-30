@@ -2,6 +2,13 @@
 
 var path = require("path");
 var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var BASE_HREF = '/';
+
+if (process.env.BASE_HREF) {
+  BASE_HREF = process.env.BASE_HREF;
+}
 
 module.exports = {
   entry: [
@@ -10,8 +17,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist/"
+    filename: "bundle.js"
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -23,6 +29,10 @@ module.exports = {
       compressor: {
         warnings: false
       }
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      baseUrl: BASE_HREF
     })
   ],
   module: {
@@ -37,7 +47,7 @@ module.exports = {
       test: /\.css$/,
       loader: "style-loader!css-loader"
     }, {
-      test: /\.(png|jpg|gif)$/,
+      test: /\.(png|jpg|jpeg|gif)$/,
       loader: "url-loader?limit=8192"
     }, {
       test: /\.svg$/,
