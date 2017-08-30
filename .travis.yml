@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - "6"
 cache: yarn
-before_script:
-  - mkdir dist && cp index.html dist
+env:
+  - BASE_HREF=/angularjs-to-angular-presentation/
 script: yarn build
 deploy:
   provider: pages
