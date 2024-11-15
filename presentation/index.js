@@ -155,7 +155,7 @@ export default class Presentation extends React.Component {
               including one-way binding and components.
             </Text>
             <Text>
-              Look at Todd Motto's excellent AngularJS style guide for best practices.
+              Refer to Todd Motto's excellent AngularJS style guide for best practices.
               https://github.com/toddmotto/angularjs-styleguide
             </Text>
           </Notes>
